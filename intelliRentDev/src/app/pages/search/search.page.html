@@ -1,0 +1,70 @@
+<ion-header [translucent]="false" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="padding-bottom: 10px">
+    <ion-icon (click)="goBack()" name="arrow-back" color="blackColor"
+      style="font-size: 24px; margin: 20px; margin-bottom: 10px">
+    </ion-icon>
+    <div class="rowAlignCenter searchFieldWrapper">
+      <ion-icon name="search" color="grayColor" style="font-size: 20px">
+      </ion-icon>
+      <ion-input mode="ios" placeholder="Searching for ..." class="blackColor14Medium searchField">
+      </ion-input>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="margin: 20px; margin-top: 10px">
+    <ion-text class="blackColor16SemiBold"> Recent searches </ion-text>
+    <div *ngFor="let item of recentSearches" class="rowAlignCenter" style="margin-top: 10px">
+      <fa-icon icon="history" style="color: var(--grayColor); font-size: 16px"></fa-icon>
+      <ion-text class="blackColor14Regular" style="margin-left: 5px">
+        {{item}}
+      </ion-text>
+    </div>
+  </div>
+
+  <div>
+    <ion-text class="blackColor18SemiBold margin20">
+      Maybe you will like..
+    </ion-text>
+    <div class="marginTop10">
+      <div *ngFor="let item of featuredPropertyList;let i=index;" class="featuredPropertyWrapper"
+        style="position: relative">
+        <div (click)="goTo('property-detail')" style="position: relative">
+          <ion-img [src]="item.propertyImage" style="height: 200px; object-fit: cover">
+          </ion-img>
+          <div style="padding: 10px">
+            <div class="rowAlignCenter" style="justify-content: space-between">
+              <div style="flex: 1; display: flex; flex-direction: column">
+                <ion-text class="blackColor14SemiBold ellipseText" style="-webkit-line-clamp: 1">
+                  {{item.propertyName}}
+                </ion-text>
+                <ion-text class="grayColor12Medium ellipseText" style="-webkit-line-clamp: 2; margin-top: 3px">
+                  {{item.propertyAddress}}
+                </ion-text>
+              </div>
+              <div class="columnAlignCenter" style="
+                  padding: 3px 12px;
+                  border: 1px solid rgba(128, 128, 128, 0.5);
+                  border-radius: 5px;
+                ">
+                <ion-text class="blackColor16SemiBold">
+                  €{{item.propertyAmount}}
+                </ion-text>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="center circle30">
+          <ion-icon (click)="infavorit=!featuredPropertyList[i].isFavourit;
+           this.featuredPropertyList[i].isFavourit = !this.featuredPropertyList[i].isFavourit;
+           isToastOpen=true
+           " [name]="item.isFavourit?'heart':'heart-outline'" [color]="item.isFavourit?'primaryColor': 'grayColor'"
+            style="font-size: 18px"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-toast mode="ios" [isOpen]="isToastOpen" [message]="infavorit?'Added to Favourites':'Removed from Favourites'"
+    class="whiteColor15Medium" [duration]="1000" (didDismiss)="isToastOpen=false"></ion-toast>
+</ion-content>

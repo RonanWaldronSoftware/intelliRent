@@ -1,0 +1,85 @@
+ion-toggle {
+    --track-background: rgba(128, 128, 128, 0.3);
+    --track-background-checked: rgba(255, 118, 117, 0.6);
+    --handle-background: var(--whiteColor);
+    --handle-background-checked: var(--primaryColor);
+    --handle-width: 15px;
+    --handle-height: 15px;
+  }
+  
+  ion-toggle::part(track) {
+    height: 10px;
+    width: 30px;
+  }
+
+  ion-popover::part(content) {
+    border-radius: 10px;
+  }
+
+  .circle40 {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--primaryColor);
+  }
+  
+  .userImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  .divider {
+    height: 0.8px;
+    background-color: rgba(128, 128, 128, 0.5);
+    margin: 10px 20px;
+  }
+
+  .addButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--primaryColor);
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .logoutWrapper {
+    margin: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+
+  .cancelButton {
+    border: 1px solid var(--blackColor);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--whiteColor);
+    margin: 10px;
+  }
+  
+  .logoutButton {
+    border: 1px solid var(--primrayColor);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--primaryColor);
+    margin: 10px;
+  }
+  
+  .cancelAndLogoutWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .dialogHeader {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  

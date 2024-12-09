@@ -1,0 +1,38 @@
+.nearbyPropertyWrapper
+{
+  width: 180px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+}
+
+.featuredPropertyWrapper {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.circle30 {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.addButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: var(--primaryColor);
+  bottom: 20px;
+  right: 20px;
+}

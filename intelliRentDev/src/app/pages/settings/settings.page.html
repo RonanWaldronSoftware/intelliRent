@@ -1,0 +1,148 @@
+<ion-header [translucent]="false" mode="md" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)">
+    <ion-text class="primaryColor18Bold center">Settings</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="rowAlignCenter" style="margin: 20px; justify-content: space-between">
+    <div class="rowAlignCenter" style="flex: 1">
+      <ion-img src="../../../assets/images/users/user1.jpg" class="userImage">
+      </ion-img>
+      <ion-text class="blackColor18Bold ellipseText" style="flex: 1; -webkit-line-clamp: 1; margin: 0 20px">
+        John Smith
+      </ion-text>
+    </div>
+    <div (click)="goTo('edit-profile')" class="center circle40">
+      <fa-icon icon="pen" style="color: var(--whiteColor); font-size: 16px"></fa-icon>
+    </div>
+  </div>
+
+  <div class="rowAlignCenter" (click)="goTo('user-listing')" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      My Listing
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <ion-text class="blackColor12Regular" style="margin: 20px; display: flex">
+    ABOUT
+  </ion-text>
+
+  <div (click)="goTo('privacy-policy')" class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      Privacy Policy
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+  <div (click)="goTo('terms-use')" class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      Terms of Use
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+  <ion-text class="blackColor12Regular" style="margin: 20px; display: flex">
+    NOTIFICATIONS
+  </ion-text>
+
+  <div class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      News & Updates
+    </ion-text>
+    <ion-toggle [(ngModel)]="propertyNewsNotification" mode="md" [value]="propertyNewsNotification"></ion-toggle>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      Newly Added Properties
+    </ion-text>
+    <ion-toggle [(ngModel)]="newAddedPropertyNotification" mode="md" [value]="newAddedPropertyNotification">
+    </ion-toggle>
+  </div>
+
+  <div class="divider"></div>
+
+  <ion-text class="blackColor12Regular" style="margin: 20px; display: flex">
+    HELP
+  </ion-text>
+
+  <div (click)="goTo('support')" class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      Support
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      Live Support Chat
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rowAlignCenter" style="margin: 0 20px; justify-content: space-between">
+    <ion-text class="blackColor14Medium ellipseText" style="-webkit-line-clamp: 1">
+      intelliRent | 1.0
+    </ion-text>
+    <ion-icon name="chevron-forward-sharp" color="blackColor" style="font-size: 15px">
+    </ion-icon>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="logoutWrapper">
+    <div (click)="showDialog=true" class="rowAlignCenter">
+      <ion-icon name="log-in-outline" color="redColor" style="font-size: 22px">
+      </ion-icon>
+      <ion-text class="redColor14Medium" style="margin-left: 10px">
+        Logout
+      </ion-text>
+    </div>
+  </div>
+
+  <ion-popover mode="md" [isOpen]="showDialog" style="--width: 85%; --min-width: 85%" (didDismiss)="showDialog = false">
+    <ng-template>
+      <div style="background-color: var(--whiteColor)">
+        <ion-text class="blackColor16Bold dialogHeader">
+          Are you sure?
+        </ion-text>
+        <div class="cancelAndLogoutWrapper">
+          <div style="flex: 1">
+            <ion-text (click)="showDialog = false" class="blackColor14Medium center cancelButton" style="flex: 1">
+              Cancel
+            </ion-text>
+          </div>
+          <div style="flex: 1">
+            <ion-text (click)="showDialog = false;logout()" class="whiteColor14Medium center logoutButton"
+              style="flex: 1">
+              Logout
+            </ion-text>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-popover>
+
+</ion-content>

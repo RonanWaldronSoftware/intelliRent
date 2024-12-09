@@ -1,0 +1,230 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import "./theme/styles.scss";
+@import "./theme/fonts.scss";
+@import "material-icons/iconfont/material-icons.css";
+
+ion-content
+{
+  --background: var(--whiteColor)
+}
+
+ion-content::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
+
+*{
+  font-family: "Asap";
+}
+
+//Divisions
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.column
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.button
+{
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.horizontalScroll
+{
+  overflow-x: scroll;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.ellipseText
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+// Gradients
+.gradientWrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0.1, 0, 0.7),
+      var(--blackColor)
+    );
+  }
+
+  .gradientButton
+  {
+    border-radius: 20px;
+    padding: 12px;
+    background: linear-gradient(
+      to right,
+      rgba(6, 8, 48, 0.5),
+      rgb(106, 120, 241)
+    );
+  }
+
+
+  //Margin 
+  .margin20 
+  {
+    margin: 20px;
+  }
+
+  .marginBottom10
+  {
+    margin-bottom: 10px;
+  }
+
+  .marginTop10
+  {
+    margin-top: 10px;
+  }
+
+  .marginLeft15
+  {
+    margin-left: 15px;
+  }
+
+  .exitWrapper {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .exitText {
+    background-color: #333333;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
+  
+  .rowAlignCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .columnAlignCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  //Mobile Input
+
+  ngx-intl-tel-input input:focus {
+    outline: none !important;
+    border-color: var(--primaryColor);
+    border-width: 1.5px;
+  }
+
+  ngx-intl-tel-input input {
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.75);
+    caret-color: var(--primaryColor);
+  }
+
+  ngx-intl-tel-input input::placeholder {
+    color: var(--whiteColor);
+    font-size: 14px;
+  }
+
+  .iti .search-container input {
+    color: var(--whiteColor);
+    font-size: 14px;
+    height: 45px;
+    border-color: transparent;
+    border-radius: 0;
+  }
+
+  .iti__flag-container.open + input {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  .iti .iti__country-list {
+    box-shadow: none;
+    font-size: 14px;
+    width: 347px;
+    height: 350px;
+  }
+  
+  .iti {
+    display: block !important;
+    width: 100%;
+    color: var(--whiteColor);
+    font-size: 14px;
+  }
+  
+  .iti .dropdown-menu.country-dropdown {
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow: hidden;
+    margin-top: 2px;
+  }
+
+  
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
